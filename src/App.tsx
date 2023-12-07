@@ -1,23 +1,23 @@
-import { useState } from "react";
+import { useState } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Redirect,
-} from "react-router-dom";
-import { Theme } from "@mui/material/styles";
-import createStyles from "@mui/styles/createStyles";
-import makeStyles from "@mui/styles/makeStyles";
-import CssBaseline from "@mui/material/CssBaseline";
-import SideNav from "./Components/Navigation/SideNav";
-import ApplicationBar from "./Components/Navigation/ApplicationBar";
-import { ReactElement } from "react";
-import StartupList from "./Components/Startup/StartupList";
+} from 'react-router-dom';
+import { Theme } from '@mui/material/styles';
+import createStyles from '@mui/styles/createStyles';
+import makeStyles from '@mui/styles/makeStyles';
+import CssBaseline from '@mui/material/CssBaseline';
+import SideNav from './Components/Navigation/SideNav';
+import ApplicationBar from './Components/Navigation/ApplicationBar';
+import { ReactElement } from 'react';
+import StartupList from './Components/Startup/StartupList';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
-      display: "flex",
+      display: 'flex',
     },
     toolbar: {
       // necessary for content to be below app bar
@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme: Theme) =>
 export default function App(): ReactElement {
   const classes = useStyles();
   const [open, setOpen] = useState(false);
-  const [activeItem, setActiveItem] = useState("Home");
+  const [activeItem, setActiveItem] = useState('Home');
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -70,7 +70,7 @@ export default function App(): ReactElement {
                 return <Redirect to="/" />;
               }}
             />
-            <Route exact path="/startups" component={} />
+            <Route exact path="/startups" component={StartupList} />
           </Switch>
         </main>
       </div>
