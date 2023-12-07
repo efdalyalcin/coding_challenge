@@ -9,7 +9,7 @@ export class StartupHttpService {
   }
 
   public static async getStartups(): Promise<Startup[]> {
-    const response = await axios.get<StartupDTO[]>(`/api/startups`);
+    const response = await axios.get<StartupDTO[]>(`/api/startups?all=true`);
 
     // StartupMapper is needed according to testes, so I could only think this in short time
     // this creates O(n^2) time complexity which is not good.
