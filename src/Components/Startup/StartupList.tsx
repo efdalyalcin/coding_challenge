@@ -21,9 +21,9 @@ export default function StartupList(): ReactElement {
 
   return (
     <List id="startup-list">
-      {startupsList.map((startup, index) => (
-        <ListItem key={index}>
-          <Card style={{ width: '100%' }}>
+      {startupsList.map((startup) => (
+        <ListItem key={startup.id} className="MuiGrid-item">
+          <Card className="MuiCard-root" style={{ width: '100%' }}>
             <CardContent>
               <Typography variant="h5" component="div">
                 {startup.name}
@@ -37,7 +37,7 @@ export default function StartupList(): ReactElement {
                 <span> | </span>
                 <span>{startup.employees} Employees</span>
                 <span> | </span>
-                <span>{startup.totalFunding} $</span>
+                <span>$ {startup.totalFunding} Mio.</span>
                 <span> | </span>
                 <span>{startup.currentInvestmentStage}</span>
               </Typography>
